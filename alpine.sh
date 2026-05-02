@@ -122,7 +122,7 @@ setup_config_templates() {
     ln -sf "$INSTALL_DIR"/hermes /usr/local/bin/hermes
 	
 	# 设置默认配置目录
-	sed -i '/if __name__ == "__main__":/i import os' "$INSTALL_DIR"/hermes
+	sed -i "/if __name__ == \"__main__\":/i\\import os" "$INSTALL_DIR"/hermes
 	sed -i "/if __name__ == \"__main__\":/i\\os.environ[\"HERMES_HOME\"] = \"$HERMES_HOME\"" "$INSTALL_DIR"/hermes
     
     # 创建 HERMES_HOME 目录结构
